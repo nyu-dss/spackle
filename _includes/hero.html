@@ -1,0 +1,17 @@
+<div class="bg-secondary-bg pl-scrollbar">
+  <div class="max-w-screen-xl mx-auto">
+    <div class="grid grid-cols-9 grid-rows-5 h-screen -mt-16">
+      <div class="col-start-2 col-span-4 row-start-3 row-span-2 bg-local bg-cover z-10 shadow-2xl" style="background: linear-gradient(to right, rgba(67,12,186,0.3), rgba(201,58,218,0.3)), url('{{ page.hero.left_img }}');"></div>
+
+      <div class="col-start-3 col-span-5 row-start-2 row-span-3 z-20">
+        <div class="flex flex-col items-center justify-center min-h-full">
+          <div class="bg-white bg-opacity-75 shadow-2xl -m-12 p-12">
+            <span class="font-bold text-black text-opacity-75 text-2xl md:text-3xl">{{ page.hero.text | default: site.description }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-start-5 col-span-4 row-start-2 row-span-2 bg-local bg-cover shadow-2xl" style="background: linear-gradient(to left, rgba(10,240,183,0.3), rgba(0,1,255,0.3)), url('{{ page.hero.right_img }}');">
+      </div>
+    </div>
+  </div>
+</div>

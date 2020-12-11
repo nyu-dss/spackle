@@ -1,0 +1,8 @@
+title: nyu-dss/spackle
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  spackle is a wax theme for digital exhibits <br>from nyu special collections
+baseurl: "/spackle" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+permalink: pretty
+lang: en
