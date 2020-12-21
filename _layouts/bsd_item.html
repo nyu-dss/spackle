@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<div class="w-80 center">
+  <h2>{{ page.label }}</h2>
+
+  <div style="position:relative;height:80vh;">
+    {% include mirador-viewer.html manifest=page.manifest %}
+  </div>
+
+  <dl class="lh-title mv5">
+    <dt class="f6 b mt2">Author</dt>
+    <dd class="ml0">{{ page.author }}</dd>
+    <dt class="f6 b mt2">Location</dt>
+    <dd class="ml0">{{ page.location }}</dd>
+    <dt class="f6 b mt2">Date</dt>
+    <dd class="ml0">{{ page._date}}</dd>
+    <dt class="f6 b mt2">Contributor</dt>
+    <dd class="ml0">{{ page.contributor }}</dd>
+    <dt class="f6 b mt2">Object Type</dt>
+    <dd class="ml0">{{ page.object_type }}</dd>
+    <dt class="f6 b mt2">IIIF Manifest</dt>
+    <dd class="ml0"><a href="{{ page.manifest | absolute_url }}">{{ page.pid }}</a></dd>
+  </dl>
+</div>

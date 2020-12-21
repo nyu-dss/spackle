@@ -1,0 +1,12 @@
+
+<div class="cf w-100 mv3">
+  {% for item in site[include.collection] %}
+  <div class="fl w-third w-25-m w-20-ns pa2">
+    <div class="aspect-ratio aspect-ratio--1x1 grow shadow-5">
+      <a href="{{ item.url | absolute_url }}">
+        <img style="background: url({{ item.thumbnail | absolute_url }});" class="hover-saturate db bg-center cover aspect-ratio--object" />
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+</div>

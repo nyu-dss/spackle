@@ -6,3 +6,13 @@ baseurl: "/spackle" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: pretty
 lang: en
+incremental: true
+
+collections:
+  bsd: # name of collection
+    output: true # makes sure pages are output as html files
+    layout: 'bsd_item' # the layout for the pages to use
+    metadata:
+      source: 'bsd-data.csv' # path to the metadata file within `_data`
+    images:
+      source: 'raw_images' # path to the directory of images within `_data`

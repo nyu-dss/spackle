@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
-
-  <body class="flex flex-col min-h-screen">
-    {% include header.html %}
-    <main class="flex-grow pt-16">
-      {% include hero.html %}
-      {% assign content = content | strip_newlines %}
-      {% unless content == "" %}
-        <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
-          <div class="bg-secondary-bg rounded px-6 py-8" style="margin: 2rem auto;">
-            <div class="content">
-              {{ content }}
-            </div>
-          </div>
-        </div>
-      {% endunless %}
+  <body class="bg-near-black washed-yellow pb5">
+    <nav class="dt w-100 border-box pa3 ph5-ns fixed o-70 z-max">
+      <a class="dtc v-mid link dim w-25" href="{{ '/' | absolute_url }}" title="Home">
+        <img src="https://avatars0.githubusercontent.com/u/57728171?s=200&v=4" class="dib w2 h2 br-100" alt="Site Name">
+      </a>
+      <div class="dtc v-mid w-75 tr">
+        <a class="link washed-yellow f6 f5-ns dib mr3 mr4-ns" href="#" title="About">Services</a>
+        <a class="link washed-yellow f6 f5-ns dib mr3 mr4-ns" href="#" title="Store">Blog</a>
+        <a class="link washed-yellow f6 f5-ns dib" href="#" title="Contact">Join Us</a>
+      </div>
+    </nav>
+    {% if page.hero %}{% include hero.html hero=page.hero %}{% endif %}
+    <main class="w-70 center pv6 f4 lh-copy">
+      {{ content }}
     </main>
-    {% include footer.html %}
   </body>
 </html>

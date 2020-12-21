@@ -1,0 +1,28 @@
+<div id="mirador" class="w-100 h-100"></div>
+
+<script type="text/javascript" src='{{ "assets/js/mirador.min.js" | absolute_url }}'></script>
+<script type="text/javascript">
+  var miradorInstance = Mirador.viewer({
+    id: "mirador",
+    selectedTheme: "dark",
+    language: "en",
+    windows: [{
+      loadedManifest: "{{ include.manifest | absolute_url }}",
+    }],
+    window: {
+      allowClose: false,
+      allowMaximize:  false,
+      defaultSideBarPanel: "info",
+      defaultView: "book"
+    },
+    workspace: {
+      type: "mosaic", // Which workspace type to load by default. Other possible values are "elastic"
+    },
+    thumbnailNavigation: {
+      defaultPosition: "off"
+    },
+    workspaceControlPanel: {
+      enabled: false,
+    }
+  });
+</script>
