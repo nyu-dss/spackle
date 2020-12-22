@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'jekyll', '~> 4.1.1'
 # gem 'wax-spackle-theme', path: 'wax-spackle-theme'
-gem 'minima', '~> 2.5'
 gem 'wax_tasks'
 
 

@@ -6,5 +6,33 @@ sitemap: false
 $sans-serif: 'Work Sans', 'Arial';
 
 @import 'tachyons';
-// @import 'eureka';
 @import 'spackle';
+
+body {
+  --text-color: #222;
+  --bkg-color: #fff;
+}
+body.dark-theme {
+  --text-color: #eee;
+  --bkg-color: #121212;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    --text-color: #eee;
+    --bkg-color: #121212;
+    a {
+      color: var(--text-color);
+    }
+  }
+  body.light-theme {
+    --text-color: #222;
+    --bkg-color: #fff;
+  }
+}
+
+body, main {
+  background: var(--bkg-color);
+  color: var(--text-color);
+}

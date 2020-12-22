@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
-  <body class="bg-near-black washed-yellow pb5">
+  <body class="pb5">
     <nav class="dt w-100 border-box pa3 ph5-ns fixed o-70 z-max">
       <a class="dtc v-mid link dim w-25" href="{{ '/' | absolute_url }}" title="Home">
         <img src="https://avatars0.githubusercontent.com/u/57728171?s=200&v=4" class="dib w2 h2 br-100" alt="Site Name">
       </a>
       <div class="dtc v-mid w-75 tr">
-        <a class="link washed-yellow f6 f5-ns dib mr3 mr4-ns" href="#" title="About">Services</a>
-        <a class="link washed-yellow f6 f5-ns dib mr3 mr4-ns" href="#" title="Store">Blog</a>
-        <a class="link washed-yellow f6 f5-ns dib" href="#" title="Contact">Join Us</a>
+        <a class="link f6 f5-ns dib mr3 mr4-ns" href="#" title="About">Services</a>
+        <a class="link f6 f5-ns dib mr3 mr4-ns" href="#" title="Store">Blog</a>
+        <a class="link f6 f5-ns dib" href="#" title="Contact">Join Us</a>
+        <button class="btn-toggle">Toggle Dark-Mode</button>
       </div>
     </nav>
     {% if page.hero %}{% include hero.html hero=page.hero %}{% endif %}
     <main class="w-70 center pv6 f4 lh-copy">
       {{ content }}
     </main>
+    <script>
+      const btn = document.querySelector(".btn-toggle");
+      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+      const currentTheme = localStorage.getItem("theme");
+      if (currentTheme == "dark") {
+        document.body.classList.toggle("dark-theme");
+      } else if (currentTheme == "light") {
+        document.body.classList.toggle("light-theme");
+      }
+
+      btn.addEventListener("click", function () {
+        if (prefersDarkScheme.matches) {
+          document.body.classList.toggle("light-theme");
+          var theme = document.body.classList.contains("light-theme")
+            ? "light"
+            : "dark";
+        } else {
+          document.body.classList.toggle("dark-theme");
+          var theme = document.body.classList.contains("dark-theme")
+            ? "dark"
+            : "light";
+        }
+        localStorage.setItem("theme", theme);
+      });
+    </script>
   </body>
 </html>

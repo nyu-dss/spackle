@@ -1,16 +1,21 @@
 <head>
+  <title>{{ site.title }}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>{{ site.title }}</title>
+
+  <meta name="color-scheme" content="light dark">
+  <script>
+      if (
+        localStorage.getItem("color-mode") === "dark" ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches &&
+          !localStorage.getItem("color-mode"))
+      ) {
+        document.documentElement.setAttribute("color-mode", "dark");
+      }
+  </script>
   <link rel='stylesheet' href="{{ '/assets/styles.css' | absolute_url }}"/>
-  <script defer src="{{ 'assets/js/eureka.min.js' | absolute_url }}"></script>
-
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css" media="print" onload="this.media='all';this.onload=null" crossorigin>
-  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js" crossorigin></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js" integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo=" crossorigin></script>
-
+  <!-- <link rel="stylesheet" href="{{ '/assets/light.css' | absolute_url }}" media="(prefers-color-scheme: light)"> -->
+  <!-- <link rel="stylesheet" href="{{ '/assets/dark.css' | absolute_url }}" media="(prefers-color-scheme: dark)"> -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="https://themes.gohugo.io/theme/hugo-eureka/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_2.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://themes.gohugo.io/theme/hugo-eureka/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png">

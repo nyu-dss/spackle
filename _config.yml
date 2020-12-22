@@ -7,6 +7,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: pretty
 lang: en
 incremental: true
+sass:
+   sourcemap: never
 
 collections:
   bsd: # name of collection
